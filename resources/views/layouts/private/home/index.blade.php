@@ -31,11 +31,11 @@
                             <tbody>
                                 @foreach($homes as $home)
                                 <tr>
-                                    <td>{{ $home->hero }}</td> <!-- Menampilkan properti hero -->
+                                    <td><img src="{{ Storage::url($home->hero) }}" alt="Hero" style="width: 100px;"></td>
                                     <td>{{ $home->deskripsi }}</td>
-                                    <td><img src="{{ $home->foto1 }}" alt="Foto 1" style="width: 100px;"></td> <!-- Menampilkan foto 1 -->
-                                    <td><img src="{{ $home->foto2 }}" alt="Foto 2" style="width: 100px;"></td> <!-- Menampilkan foto 2 -->
-                                    <td><img src="{{ $home->foto3 }}" alt="Foto 3" style="width: 100px;"></td> <!-- Menampilkan foto 3 -->
+                                    <td><img src="{{ Storage::url($home->foto1) }}" alt="Foto 1" style="width: 100px;"></td>
+                                    <td><img src="{{ Storage::url($home->foto2) }}" alt="Foto 2" style="width: 100px;"></td>
+                                    <td><img src="{{ Storage::url($home->foto3) }}" alt="Foto 3" style="width: 100px;"></td>
                                     <td>
                                         <form action="{{ route('home.destroy', $home->id) }}" method="POST">
                                             @csrf
